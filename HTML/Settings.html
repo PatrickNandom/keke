@@ -116,6 +116,9 @@
                 const registrationNumber = document.querySelector('.reg__no input').value;
 
                 try {
+                    if (!fullName || !email || registrationNumber) {
+                        alert('all input fields are required!')
+                    }
                     const response = await fetch(`${baseUrl}/user/update/${userId}`, {
                         method: 'PATCH',
                         headers: {
